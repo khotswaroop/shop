@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <title>Book Flat</title>
+</head>
+<body>
+    {% block 'main'%}
+    <h2 class="mt-5"></h2>
+    <!-- <hr style="height: 2px"> -->
+    <div class="col-md-8 mt-3 m-auto">
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{fm1.as_p}}
+            {{fm2.as_p}}
+            <!-- <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                    <label for="city" class="form-label">Id</label>
+                    <input type="text" class="form-control" name="id" value="">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                    <label for="residencyname" class="form-label">product</label>
+                    <input type="text" class="form-control" name="product_id" value="">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                    <label for="residencyname" class="form-label">user_id</label>
+                    <input type="text" class="form-control" name="user_id" value="">
+                    </div>
+                </div>
+            </div> -->
+            <button type="submit" class="btn btn-warning">Submit</button>
+        </form>
+        {% endblock %}
+    </body>
+</html>

@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+    {% block 'main'%}
+    <table class="table mt-5" border="1px">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Address</th>
+        </tr>
+        {% for user in show_user %}
+        <tr>
+            <td>{{user.name}}</td>
+            <td>{{user.age}}</td>
+            <td>{{user.address}}</td>
+            <td><a href="/edituser/{{user.id}}">Edit</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endblock 'main'%}

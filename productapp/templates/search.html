@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+    {% block 'main'%}
+    <h4 class="mt-5"><span class="text-muted">search result for </span>{{request.GET.q}}</h4>
+    <table class="table mt-5" border="1px">
+        <tr>
+            <th>Shape</th>
+            <th>Size</th>
+            <th>Location</th>
+            <th>Price</th>
+        </tr>
+        {% if data %}
+        {% for product in data %}
+        <tr>
+            <td>{{product.shape}}</td>
+            <td>{{product.size}}</td>
+            <td>{{product.location}}</td>
+            <td>{{product.price}}</td>
+            <td><a href="/editproduct/{{product.id}}">Edit</a></td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+    </table>
+    {% endblock %}

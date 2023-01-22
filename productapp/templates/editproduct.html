@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+    {% block 'main'%}
+    <h2 class="mt-5">Edit Product</h2>
+    <hr style="height: 2px">
+    <div class="col-md-8 mt-3 m-auto">
+        <form action="" method="POST">
+            {% csrf_token %}
+            {% for i in data %}
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="mb-3">
+                    <label for="city" class="form-label">Id</label>
+                    <input type="text" class="form-control" name="id" value="{{i.id}}">
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <div class="mb-3">
+                    <label for="residencyname" class="form-label">Shape</label>
+                    <input type="text" class="form-control" name="shape" value="{{i.shape}}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="flatno" class="form-label">Size</label>
+                        <input type="text" class="form-control" name="size" value="{{i.size}}">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="flowrno" class="form-label">location</label>
+                        <input type="text" class="form-control" name="location" value="{{i.location}}">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="date" class="form-label">price</label>
+                        <input type="text" class="form-control" name="price" value="{{i.price}}">
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-warning">Submit</button>
+        </form>
+        {% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block 'main'%}
+    <form action="/register" method="POST" class="mt-5" novalidate>
+        {% csrf_token %}
+        <table>
+            {% for i in fm %}
+                <tr>
+                    <td>{{i.label_tag}}</td>
+                    <td>{{i}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <input type="submit" value="Submit">
+    </form>
+{% endblock %}

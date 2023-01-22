@@ -1,0 +1,20 @@
+{% extends 'base.html'%}
+    {% block 'main'%}
+    <table class="table mt-5" border="1px">
+        <tr>
+            <th>Shape</th>
+            <th>Size</th>
+            <th>Location</th>
+            <th>Price</th>
+        </tr>
+        {% for product in showproduct %}
+        <tr>
+            <td>{{product.shape}}</td>
+            <td>{{product.size}}</td>
+            <td>{{product.location}}</td>
+            <td>{{product.price}}</td>
+            <td><a href="/editproduct/{{product.id}}">Edit</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endblock %}
